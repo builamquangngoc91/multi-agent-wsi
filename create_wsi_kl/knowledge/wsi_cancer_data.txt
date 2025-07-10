@@ -1,0 +1,132 @@
+WSI Cancer Analysis Knowledge Base
+
+## Common Cancer Types in WSI Analysis
+
+### Lung Cancer
+- **Primary types**: Adenocarcinoma, Squamous cell carcinoma, Large cell carcinoma, Small cell lung cancer
+- **Morphological identification characteristics**: Cellular morphology variations, glandular pattern formations, keratinization presence, mitotic activity levels, nuclear pleomorphism
+- **Visual and architectural features**: Tissue architecture patterns, nuclear size variations, cytoplasmic characteristics, growth pattern organization, stromal interactions
+- **Immunohistochemical markers**: TTF-1 (thyroid transcription factor-1), CK7, CK20, p63, CD56, Napsin A
+- **Differential diagnosis**: Primary vs metastatic, adenocarcinoma vs squamous cell carcinoma, small cell vs non-small cell
+- **Grading criteria**: Well, moderately, poorly differentiated based on glandular formation and nuclear features
+
+### Breast Cancer
+- **Primary types**: Invasive ductal carcinoma, Invasive lobular carcinoma, Ductal carcinoma in situ (DCIS), Lobular carcinoma in situ (LCIS)
+- **Morphological identification characteristics**: Ductal vs lobular growth patterns, nuclear grade assessment, tubule formation patterns, mitotic count evaluation
+- **Visual and architectural features**: Architectural distortion patterns, fibrotic response, lymphoid infiltrate presence, necrosis patterns
+- **Immunohistochemical markers**: Estrogen receptor (ER), Progesterone receptor (PR), HER2/neu, Ki-67 proliferation index
+- **Differential diagnosis**: Invasive vs in situ, ductal vs lobular, primary vs metastatic
+- **Grading systems**: Nottingham histologic grade, nuclear grade, mitotic activity index
+
+### Liver Cancer
+- **Primary types**: Hepatocellular carcinoma, Cholangiocarcinoma (intrahepatic/extrahepatic), Metastatic carcinoma
+- **Morphological identification characteristics**: Hepatocellular patterns, bile production capability, portal tract involvement, sinusoidal invasion
+- **Visual and architectural features**: Sinusoidal architecture patterns, trabecular arrangement, vascular invasion patterns, fibrosis distribution
+- **Immunohistochemical markers**: Alpha-fetoprotein (AFP), Hepar-1, Arginase-1, CK19, CD34, Glypican-3
+- **Differential diagnosis**: Primary vs metastatic, hepatocellular vs cholangiocarcinoma, well vs poorly differentiated
+- **Grading systems**: Edmondson-Steiner grade, WHO classification criteria
+
+### Colorectal Cancer
+- **Primary types**: Adenocarcinoma (conventional), Mucinous adenocarcinoma, Signet ring cell carcinoma, Medullary carcinoma
+- **Morphological identification characteristics**: Glandular differentiation levels, mucin production patterns, invasion depth assessment, growth pattern analysis
+- **Visual and architectural features**: Cribriform patterns, desmoplastic stromal reaction, lymphovascular invasion, perineural invasion
+- **Immunohistochemical markers**: CK20, CDX2, CK7, Mismatch repair proteins (MLH1, MSH2, MSH6, PMS2)
+- **Differential diagnosis**: Primary vs metastatic, adenocarcinoma vs other carcinomas, microsatellite stable vs unstable
+- **Grading systems**: WHO grading, tumor budding assessment, lymphovascular invasion status
+
+### Prostate Cancer
+- **Primary types**: Adenocarcinoma (acinar type), Ductal adenocarcinoma, Neuroendocrine carcinoma
+- **Morphological identification characteristics**: Glandular architecture, nuclear morphology, nucleolar prominence, cytoplasmic features
+- **Visual and architectural features**: Growth patterns, stromal invasion, perineural invasion, capsular involvement
+- **Immunohistochemical markers**: PSA (prostate-specific antigen), PSAP, p63, CK5/6, AMACR (α-methylacyl-CoA racemase)
+- **Differential diagnosis**: Benign vs malignant, primary vs metastatic, adenocarcinoma vs other carcinomas
+- **Grading systems**: Gleason score/Grade group, ISUP (International Society of Urological Pathology) classification
+
+## WSI Analysis Parameters
+
+### Image Quality Assessment
+- **Resolution requirements**: Minimum 20x magnification equivalent (0.5 μm/pixel), optimal 40x magnification (0.25 μm/pixel)
+- **Focus criteria**: Sharp nuclear chromatin details, clear cytoplasmic boundaries, distinct cellular membranes
+- **Staining quality**: Adequate H&E contrast, uniform staining distribution, minimal background staining
+- **Artifact management**: Minimal tissue folding, absence of air bubbles, no significant debris or precipitates
+- **Color balance**: Proper hematoxylin (nuclear) and eosin (cytoplasmic) color separation and intensity
+
+### Morphological Features Assessment
+
+#### Nuclear Features
+- **Size**: Comparison to normal cell nuclei or lymphocyte nuclei (measured in micrometers)
+- **Shape**: Round, oval, irregular, lobulated, or pleomorphic configurations
+- **Chromatin pattern**: Fine, coarse, vesicular, hyperchromatic, or heterochromatic distributions
+- **Nucleoli**: Size, number, prominence, and morphological characteristics
+- **Nuclear membrane**: Thickness, irregularity, and contour characteristics
+
+#### Cytoplasmic Features
+- **Eosinophilia**: Degree of pink staining intensity and distribution
+- **Vacuolation**: Presence, size, and distribution of cytoplasmic vacuoles
+- **Inclusion bodies**: Viral, protein, or other cytoplasmic inclusions
+- **Cytoplasmic volume**: Nuclear-to-cytoplasmic ratio assessment
+- **Specialized features**: Mucin production, keratinization, or other differentiating features
+
+#### Architectural Patterns
+- **Glandular**: Well-formed, moderately formed, poorly formed, or cribriform patterns
+- **Solid**: Sheet-like, nested, or trabecular growth arrangements
+- **Papillary**: True papillae with fibrovascular cores vs pseudopapillae
+- **Single cell**: Scattered individual cells, linear arrangements, or Indian file patterns
+- **Mixed patterns**: Combination of architectural features and their relative proportions
+
+### Stromal Reactions and Microenvironment
+- **Desmoplasia**: Extensive, moderate, or minimal fibrotic response
+- **Inflammatory infiltrate**: Acute, chronic, mixed, or specific immune cell populations
+- **Necrosis**: Coagulative, liquefactive, caseous, or geographic necrosis patterns
+- **Vascular changes**: Angiogenesis, vascular invasion, or vascular compromise
+- **Lymphatic involvement**: Lymphovascular invasion assessment and extent
+
+## Advanced WSI Analysis Techniques
+
+### Quantitative Analysis
+- **Mitotic count**: Per 10 high-power fields (HPF) or per mm² standardization
+- **Nuclear morphometry**: Size, shape, and texture quantification
+- **Architectural quantification**: Glandular formation percentage, solid growth areas
+- **Cellular density**: Cells per unit area measurements
+- **Vascular density**: Microvessel density assessment
+
+### Digital Pathology Tools
+- **Automated counting**: Mitotic figures, immunopositive cells, lymphocytes
+- **Morphometric analysis**: Nuclear size, shape factor, texture analysis
+- **Color deconvolution**: Separation of multiple stains for quantitative analysis
+- **Pattern recognition**: Automated identification of architectural patterns
+- **AI-assisted diagnosis**: Machine learning algorithms for pattern recognition
+
+## Grading and Staging Systems
+
+### Universal Grading Principles
+- **Grade 1 (Well differentiated)**: >75% glandular formation, minimal nuclear pleomorphism, low mitotic activity
+- **Grade 2 (Moderately differentiated)**: 50-75% glandular formation, moderate nuclear pleomorphism, moderate mitotic activity
+- **Grade 3 (Poorly differentiated)**: <50% glandular formation, marked nuclear pleomorphism, high mitotic activity
+- **Grade 4 (Undifferentiated)**: No glandular formation, extreme nuclear pleomorphism, very high mitotic activity
+
+### TNM Staging Integration
+- **Primary tumor (T)**: Size, local extension, organ involvement
+- **Regional lymph nodes (N)**: Number and extent of nodal involvement
+- **Distant metastases (M)**: Presence and sites of distant spread
+- **Staging correlation**: Morphological features supporting staging assessment
+
+## Quality Control and Standardization
+
+### Diagnostic Consistency
+- **Inter-observer agreement**: Standardized criteria for morphological assessment
+- **Intra-observer reproducibility**: Consistent interpretation over time
+- **Calibration standards**: Reference materials and control samples
+- **Proficiency testing**: Regular assessment of diagnostic accuracy
+
+### Documentation Standards
+- **Systematic reporting**: Structured format following international guidelines
+- **Terminology standardization**: Use of accepted pathology nomenclature
+- **Quantitative measurements**: Objective criteria where possible
+- **Photodocumentation**: Representative images for key findings
+
+### Validation Protocols
+- **Accuracy verification**: Correlation with clinical outcomes and follow-up
+- **Completeness assessment**: Comprehensive coverage of all relevant features
+- **Consistency checks**: Uniform application of diagnostic criteria
+- **Continuous improvement**: Regular updates based on new evidence and guidelines 

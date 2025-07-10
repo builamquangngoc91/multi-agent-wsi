@@ -1,2 +1,6 @@
-User name is John Doe.
-User is an UX/UI.
+System: WSI Cancer Description Multi-Agent System
+Purpose: Generate comprehensive pathological descriptions for cancer analysis using advanced WSI methodologies
+Target Users: Medical professionals, pathologists, and healthcare educators
+Language: Professional English medical terminology with international standards compliance
+Output Format: Publication-ready markdown documentation with professional medical formatting
+Quality Standards: WHO, CAP, and international pathology guidelines compliance

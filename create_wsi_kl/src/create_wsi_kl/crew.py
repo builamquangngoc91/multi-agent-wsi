@@ -14,7 +14,7 @@ from crewai.knowledge.source.crew_docling_source import CrewDoclingSource
 
 @CrewBase
 class CreateWsiKl:
-    """CreateWsiKl crew"""
+    """WSI Cancer Description Multi-Agent System"""
 
     agents: List[BaseAgent]
     tasks: List[Task]
@@ -23,58 +23,105 @@ class CreateWsiKl:
     # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
     # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
 
-    # If you would like to add tools to your agents, you can learn more about it here:
-    # https://docs.crewai.com/concepts/agents#agent-tools
+    # WSI Cancer Description Agents
     @agent
-    def researcher(self) -> Agent:
+    def planning_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config["researcher"],  # type: ignore[index]
+            config=self.agents_config["planning_agent"],  # type: ignore[index]
             verbose=True,
             llm=_default_llm,
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def description_generator(self) -> Agent:
         return Agent(
-            config=self.agents_config["reporting_analyst"],  # type: ignore[index]
+            config=self.agents_config["description_generator"],  # type: ignore[index]
             verbose=True,
             llm=_default_llm,
         )
 
-    # To learn more about structured task outputs,
-    # task dependencies, and task callbacks, check out the documentation:
-    # https://docs.crewai.com/concepts/tasks#overview-of-a-task
+    @agent
+    def description_evaluator(self) -> Agent:
+        return Agent(
+            config=self.agents_config["description_evaluator"],  # type: ignore[index]
+            verbose=True,
+            llm=_default_llm,
+        )
+
+    @agent
+    def finalizer_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config["finalizer_agent"],  # type: ignore[index]
+            verbose=True,
+            llm=_default_llm,
+        )
+
+    # WSI Cancer Description Tasks
     @task
-    def research_task(self) -> Task:
+    def planning_task(self) -> Task:
         return Task(
-            config=self.tasks_config["research_task"],  # type: ignore[index]
+            config=self.tasks_config["planning_task"],  # type: ignore[index]
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def description_generation_task(self) -> Task:
         return Task(
-            config=self.tasks_config["reporting_task"],  # type: ignore[index]
-            output_file="report.md",
+            config=self.tasks_config["description_generation_task"],  # type: ignore[index]
+        )
+
+    @task
+    def description_evaluation_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["description_evaluation_task"],  # type: ignore[index]
+        )
+
+    @task
+    def finalization_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["finalization_task"],  # type: ignore[index]
+            output_file="wsi_cancer_description.md",
         )
 
     @crew
     def crew(self) -> Crew:
-        """Creates the CreateWsiKl crew"""
+        """Creates the WSI Cancer Description Multi-Agent System"""
         # To learn how to add knowledge sources to your crew, check out the documentation:
         # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
-        # Initialize PDF knowledge source
-        pdf_source = CrewDoclingSource(
-            file_paths=["sodapdf-converted.pdf"],
-        )
+        # Initialize WSI Cancer knowledge sources
+        knowledge_sources = []
+
+        # Add PDF knowledge source if available
+        pdf_files = [
+            "sodapdf-converted.pdf",
+            "wsi_cancer_knowledge.pdf",
+            "pathology_reference.pdf",
+        ]
+
+        for pdf_file in pdf_files:
+            pdf_path = Path("knowledge") / pdf_file
+            if pdf_path.exists():
+                knowledge_sources.append(CrewDoclingSource(file_paths=[str(pdf_path)]))
+
+        # Add text knowledge sources
+        text_files = [
+            "user_preference.txt",
+            "wsi_cancer_data.txt",
+            "pathology_guidelines.txt",
+        ]
+
+        for text_file in text_files:
+            text_path = Path("knowledge") / text_file
+            if text_path.exists():
+                knowledge_sources.append(CrewDoclingSource(file_paths=[str(text_path)]))
 
         return Crew(
             agents=self.agents,  # Automatically created by the @agent decorator
             tasks=self.tasks,  # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
-            knowledge_sources=[pdf_source],
+            # Sequential process ensures proper workflow: Planning -> Generation -> Evaluation -> Finalization
+            knowledge_sources=knowledge_sources,
             embedder={
                 "provider": "google",
                 "config": {

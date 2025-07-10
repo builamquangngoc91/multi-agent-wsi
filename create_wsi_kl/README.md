@@ -1,12 +1,45 @@
-# CreateWsiKl Crew
+# WSI Cancer Description Multi-Agent System
 
-Welcome to the CreateWsiKl Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the WSI Cancer Description Multi-Agent System, powered by [crewAI](https://crewai.com). This advanced system is designed to generate comprehensive, medically accurate descriptions of cancer types based on Whole Slide Image (WSI) analysis. The system employs a sophisticated 4-agent architecture to ensure high-quality, structured, and professional medical documentation that meets international pathology standards.
+
+## System Overview
+
+This multi-agent system specializes in generating and refining Whole Slide Image (WSI) cancer descriptions through a collaborative workflow of four specialized agents, each with enhanced expertise and capabilities:
+
+### 🤖 Enhanced Agent Architecture
+
+1. **Planning Agent - WSI Cancer Analysis Planning Specialist**
+
+   - Generates comprehensive, evidence-based content plans for cancer descriptions
+   - Ensures systematic coverage of all critical diagnostic aspects
+   - Integrates current pathology guidelines and international standards (WHO, CAP)
+   - Creates structured frameworks for morphological analysis
+
+2. **Description Generator - WSI Cancer Description Expert & Digital Pathologist**
+
+   - Board-certified pathologist with 20+ years of digital pathology experience
+   - Generates detailed morphological identification characteristics
+   - Describes visual and architectural features with precision
+   - Integrates immunohistochemical and molecular correlations
+
+3. **Description Evaluator - Quality Assurance & Validation Specialist**
+
+   - Performs rigorous medical review and validation
+   - Ensures adherence to international pathology standards
+   - Validates diagnostic accuracy and completeness
+   - Provides comprehensive quality assessment
+
+4. **Finalizer Agent - Medical Documentation & Publishing Specialist**
+   - Transforms content into publication-ready medical documentation
+   - Ensures compliance with medical publishing standards
+   - Creates professional, structured markdown documents
+   - Optimizes for medical education and clinical reference
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling.
 
-First, if you haven't already, install uv:
+First, install uv:
 
 ```bash
 pip install uv
@@ -14,41 +47,235 @@ pip install uv
 
 Next, navigate to your project directory and install the dependencies:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
 crewai install
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+### Configuration
 
-- Modify `src/create_wsi_kl/config/agents.yaml` to define your agents
-- Modify `src/create_wsi_kl/config/tasks.yaml` to define your tasks
-- Modify `src/create_wsi_kl/crew.py` to add your own logic, tools and specific args
-- Modify `src/create_wsi_kl/main.py` to add custom inputs for your agents and tasks
+**Add your `GEMINI_API_KEY` to the `.env` file**
 
-## Running the Project
+The system uses Google Gemini for LLM operations and text embeddings. Create a `.env` file in the project root:
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+```
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-This command initializes the create-wsi-kl Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## Usage
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+### Basic Usage
 
-## Understanding Your Crew
+Run the system with the default cancer type (lung cancer):
 
-The create-wsi-kl Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+```bash
+crewai run
+```
 
-## Support
+### Specify Cancer Type
 
-For support, questions, or feedback regarding the CreateWsiKl Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+Analyze a specific cancer type:
 
-Let's create wonders together with the power and simplicity of crewAI.
+```bash
+crewai run "breast cancer"
+```
+
+### Supported Cancer Types
+
+The system supports comprehensive analysis of various cancer types including:
+
+- **Lung cancer** (adenocarcinoma, squamous cell carcinoma, large cell carcinoma, small cell lung cancer)
+- **Breast cancer** (invasive ductal carcinoma, invasive lobular carcinoma, ductal carcinoma in situ)
+- **Liver cancer** (hepatocellular carcinoma, cholangiocarcinoma, metastatic carcinoma)
+- **Colorectal cancer** (adenocarcinoma, mucinous adenocarcinoma, signet ring cell carcinoma)
+- **Prostate cancer** (adenocarcinoma, ductal adenocarcinoma, neuroendocrine carcinoma)
+- And many other cancer types with specialized morphological analysis
+
+### Advanced Usage
+
+#### Training Mode
+
+Train the system for improved performance:
+
+```bash
+python -m create_wsi_kl.main train <n_iterations> <training_file> [cancer_type]
+```
+
+#### Testing Mode
+
+Test system performance:
+
+```bash
+python -m create_wsi_kl.main test <n_iterations> <eval_llm> [cancer_type]
+```
+
+#### Replay Mode
+
+Replay execution from a specific task:
+
+```bash
+python -m create_wsi_kl.main replay <task_id>
+```
+
+## Enhanced Knowledge Base
+
+The system utilizes a comprehensive, professional knowledge base containing:
+
+### 🔬 **Advanced WSI Cancer Data**
+
+- Detailed morphological identification characteristics
+- Visual and architectural feature specifications
+- Immunohistochemical marker profiles
+- Differential diagnosis matrices
+- Quantitative analysis parameters
+
+### 📋 **Professional Pathology Guidelines**
+
+- International standards compliance (WHO, CAP, AJCC)
+- Standardized documentation requirements
+- Quality assurance protocols
+- Grading and staging system integration
+
+### 🧪 **Advanced Analysis Techniques**
+
+- Quantitative morphometry
+- Digital pathology tools integration
+- AI-assisted pattern recognition
+- Automated counting and measurement protocols
+
+### Knowledge Sources
+
+- `knowledge/wsi_cancer_data.txt`: Comprehensive cancer type database with advanced morphological criteria
+- `knowledge/pathology_guidelines.txt`: International medical documentation standards and protocols
+- `knowledge/user_preference.txt`: System configuration and quality standards
+- `knowledge/sodapdf-converted.pdf`: Additional reference materials and case studies
+
+## Professional Output
+
+The system generates publication-ready medical documentation in structured markdown format:
+
+### 📄 **Output Specifications**
+
+- **File**: `wsi_cancer_description.md`
+- **Format**: Professional markdown with medical documentation standards
+- **Structure**: Comprehensive sections with hierarchical organization
+
+### 📊 **Content Includes**
+
+- **Morphological Identification Characteristics**: Detailed cellular and architectural features
+- **Visual and Architectural Features**: Comprehensive WSI-specific descriptions
+- **Cellular Characteristics**: Quantitative and qualitative assessments
+- **Differential Diagnosis**: Distinguishing morphological features
+- **Clinical Significance**: Prognostic and therapeutic implications
+- **Grading and Staging**: Integration with established classification systems
+
+## Advanced System Features
+
+### 🔬 **Medical Excellence**
+
+- Board-certified pathologist expertise simulation
+- Standardized WHO and CAP terminology
+- Current medical guidelines compliance
+- Rigorous quality assurance validation
+- Evidence-based content generation
+
+### 🌐 **International Standards**
+
+- WHO Classification of Tumours compliance
+- CAP Protocol integration
+- AJCC Staging Manual correlation
+- ISUP Guidelines adherence
+- International pathology society standards
+
+### 📊 **Quality Assurance**
+
+- Multi-stage review process
+- Content validation and verification
+- Diagnostic accuracy assessment
+- Consistency checks and terminology validation
+- Professional formatting standards
+
+### 🤖 **Advanced Technology**
+
+- Autonomous workflow execution
+- Sequential task coordination
+- Inter-agent communication protocols
+- Reproducible medical documentation
+- AI-assisted quality control
+
+### 🎯 **Professional Applications**
+
+- Medical education and training materials
+- Clinical reference documentation
+- Pathology research support
+- Educational curriculum development
+- Professional certification preparation
+
+## Customization and Extension
+
+### Modifying System Components
+
+- **Agents**: Edit `src/create_wsi_kl/config/agents.yaml` to customize agent expertise and behaviors
+- **Tasks**: Modify `src/create_wsi_kl/config/tasks.yaml` to adjust task specifications and requirements
+- **Knowledge Base**: Extend `knowledge/` directory with additional medical references and guidelines
+
+### Adding New Cancer Types
+
+- Update `knowledge/wsi_cancer_data.txt` with new cancer type specifications
+- Add relevant morphological criteria and diagnostic features
+- Include immunohistochemical profiles and differential diagnosis information
+
+### Integration Capabilities
+
+- Compatible with existing pathology information systems
+- Supports integration with digital pathology platforms
+- Extensible for custom reporting requirements
+- Adaptable for institutional guidelines and protocols
+
+## Technical Specifications
+
+### System Requirements
+
+- **Python**: >=3.10 <3.14
+- **Dependencies**: CrewAI, Docling, Google Generative AI
+- **LLM**: Google Gemini 2.5 Flash Preview
+- **Embeddings**: Google text-embedding-004
+- **Processing**: Sequential multi-agent workflow
+
+### Performance Characteristics
+
+- **Accuracy**: Validated against pathology literature and guidelines
+- **Consistency**: Reproducible results across multiple runs
+- **Completeness**: Comprehensive coverage of morphological features
+- **Speed**: Optimized for efficient processing and generation
+
+## Support and Resources
+
+For support, questions, or feedback regarding the WSI Cancer Description System:
+
+- Visit the [crewAI documentation](https://docs.crewai.com)
+- Check the [GitHub repository](https://github.com/joaomdmoura/crewai)
+- [Join the Discord community](https://discord.com/invite/X4JWnZnxPb)
+
+### Additional Resources
+
+- **WHO Classification of Tumours**: Latest morphological criteria and standards
+- **CAP Protocols**: College of American Pathologists reporting guidelines
+- **Digital Pathology Resources**: WSI analysis techniques and best practices
+- **Medical Education Materials**: Pathology teaching and training resources
+
+## Medical Disclaimer
+
+This system is designed for educational and research purposes. All generated content should be reviewed and validated by qualified medical professionals before clinical use. The system does not replace professional medical diagnosis or treatment recommendations. Always consult with certified pathologists and healthcare providers for clinical decision-making.
+
+## Compliance and Standards
+
+The system adheres to:
+
+- **HIPAA**: Health Insurance Portability and Accountability Act compliance
+- **Medical Device Regulations**: Appropriate classification and usage guidelines
+- **International Standards**: WHO, CAP, AJCC, and other professional organization guidelines
+- **Quality Assurance**: Continuous validation and improvement protocols
+
+---
+
+_Building the future of AI-assisted medical documentation with the power and precision of specialized multi-agent systems._

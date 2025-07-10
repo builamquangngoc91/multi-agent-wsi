@@ -1,0 +1,215 @@
+WSI Cancer Description Guidelines
+
+## Documentation Standards
+
+### Required Sections for Cancer Descriptions
+1. **Overview**: Comprehensive introduction to the cancer type with epidemiological context and clinical significance
+2. **Morphological Identification Characteristics**:
+   - Detailed cellular morphology with specific features
+   - Nuclear characteristics and variations
+   - Cytoplasmic features and differentiating elements
+   - Architectural patterns and tissue organization
+   - Growth patterns and spatial relationships
+3. **Visual and Architectural Features**:
+   - Low-power microscopic appearance with magnification specifications
+   - High-power cellular details and specific morphological elements
+   - Tissue architecture and organizational patterns
+   - Special staining characteristics and immunohistochemical profiles
+   - Quantitative measurements and morphometric data
+4. **Differential Diagnosis**: Comprehensive analysis of distinguishing features from similar entities
+5. **Clinical Significance**: Detailed prognostic and therapeutic implications with evidence-based correlations
+6. **Grading and Staging**: Integration with established classification systems
+7. **Quality Assurance**: Validation criteria and reproducibility standards
+
+### Professional Writing Guidelines
+- Use precise, standardized medical terminology consistent with WHO and CAP guidelines
+- Incorporate quantitative measurements and objective criteria whenever possible
+- Provide specific, measurable diagnostic criteria with reference ranges
+- Avoid ambiguous, subjective, or non-standardized language
+- Include relevant grading systems, staging information, and prognostic factors
+- Reference current international guidelines and evidence-based literature
+- Maintain consistency in terminology and formatting throughout the document
+
+### Quality Assurance Checklist
+- [ ] Medical accuracy verified against current literature and guidelines
+- [ ] Terminology consistency maintained throughout document
+- [ ] All required sections present and comprehensively addressed
+- [ ] Clear, professional medical language used without ambiguity
+- [ ] Proper formatting applied according to medical documentation standards
+- [ ] References to current international guidelines included where appropriate
+- [ ] Quantitative criteria provided where applicable
+- [ ] Differential diagnosis comprehensively addressed
+- [ ] Clinical correlations and prognostic factors included
+- [ ] Grading and staging systems properly integrated
+
+## Morphological Description Standards
+
+### Cellular Morphological Features
+
+#### Nuclear Characteristics
+- **Nuclear size**: Measured in micrometers with comparison to reference standards (lymphocytes, normal epithelial cells)
+- **Nuclear shape**: Regular (round/oval), irregular, lobulated, pleomorphic, or bizarre configurations
+- **Nuclear-to-cytoplasmic ratio**: Quantified as percentage or ratio (e.g., 1:1, 2:1, 3:1)
+- **Chromatin pattern**: Fine, coarse, vesicular, hyperchromatic, heterochromatic, or clumped distributions
+- **Chromatin texture**: Smooth, granular, stippled, or irregular patterns
+- **Nucleoli**: Size (measured in micrometers), number, prominence, and morphological characteristics
+- **Nuclear membrane**: Thickness, regularity, indentations, and contour characteristics
+- **Nuclear molding**: Presence, extent, and significance in differential diagnosis
+
+#### Cytoplasmic Characteristics
+- **Cytoplasmic volume**: Abundant, moderate, scant, or absent with quantitative assessment
+- **Cytoplasmic eosinophilia**: Degree of pink staining intensity (mild, moderate, intense)
+- **Cytoplasmic basophilia**: Blue-purple staining characteristics and distribution
+- **Cytoplasmic clarity**: Clear, granular, foamy, or vacuolated appearances
+- **Specialized features**: Mucin production, keratinization, lipid accumulation, or other differentiating elements
+- **Inclusion bodies**: Viral, protein, or other cytoplasmic inclusions with specific characteristics
+- **Cytoplasmic borders**: Distinct, indistinct, or overlapping cellular boundaries
+
+### Architectural Pattern Analysis
+
+#### Glandular Patterns
+- **Well-formed glands**: Regular, organized glandular structures with clear lumina
+- **Moderately formed glands**: Partially organized with some irregularity
+- **Poorly formed glands**: Poorly organized, irregular, or difficult to identify
+- **Cribriform pattern**: Sieve-like appearance with multiple small lumina
+- **Papillary formation**: True papillae with fibrovascular cores vs pseudopapillae
+- **Solid growth**: Sheet-like, nested, or trabecular arrangements without glandular formation
+
+#### Growth Pattern Classifications
+- **Expansile growth**: Pushing borders with minimal infiltration
+- **Infiltrative growth**: Irregular, invasive growth pattern with stromal infiltration
+- **Cohesive growth**: Cells growing in cohesive groups or clusters
+- **Single cell infiltration**: Individual cells scattered through tissue (Indian file pattern)
+- **Mixed patterns**: Combination of growth patterns with relative proportions
+
+### Stromal and Microenvironmental Assessment
+
+#### Stromal Reactions
+- **Desmoplasia**: Extensive, moderate, or minimal fibrotic response with collagen deposition
+- **Inflammatory infiltrate**: Type (acute, chronic, mixed), density, and distribution
+- **Necrosis**: Type (coagulative, liquefactive, caseous), extent, and pattern
+- **Hemorrhage**: Presence, extent, and significance
+- **Calcification**: Presence, type (dystrophic, metastatic), and distribution
+
+#### Vascular and Lymphatic Assessment
+- **Vascular invasion**: Presence, extent, and significance for staging
+- **Lymphovascular invasion**: Identification criteria and prognostic significance
+- **Perineural invasion**: Presence and extent with clinical implications
+- **Angiogenesis**: Microvessel density and neovascularization assessment
+
+## Grading and Classification Systems
+
+### Universal Grading Principles
+- **Grade 1 (Well differentiated)**: 
+  - >75% glandular/tubular formation
+  - Minimal nuclear pleomorphism (uniform, small nuclei)
+  - Low mitotic activity (<10 mitoses per 10 HPF)
+  - Minimal necrosis
+
+- **Grade 2 (Moderately differentiated)**:
+  - 50-75% glandular/tubular formation
+  - Moderate nuclear pleomorphism (moderate size variation)
+  - Moderate mitotic activity (10-20 mitoses per 10 HPF)
+  - Focal necrosis
+
+- **Grade 3 (Poorly differentiated)**:
+  - <50% glandular/tubular formation
+  - Marked nuclear pleomorphism (significant size and shape variation)
+  - High mitotic activity (>20 mitoses per 10 HPF)
+  - Extensive necrosis
+
+- **Grade 4 (Undifferentiated)**:
+  - No recognizable glandular/tubular formation
+  - Extreme nuclear pleomorphism (bizarre, giant nuclei)
+  - Very high mitotic activity with atypical mitoses
+  - Extensive necrosis and hemorrhage
+
+### Specific Grading Systems
+- **Nottingham Histologic Grade** (breast cancer): Tubule formation + nuclear pleomorphism + mitotic count
+- **Gleason Score** (prostate cancer): Primary + secondary architectural patterns
+- **Fuhrman Grade** (renal cell carcinoma): Nuclear size, shape, and nucleolar prominence
+- **Edmondson-Steiner Grade** (hepatocellular carcinoma): Cellular and architectural differentiation
+
+## Language and Terminology Standards
+
+### Professional Medical Language Requirements
+- Use active voice for descriptions and present tense for morphological features
+- Employ standardized WHO terminology and ICD-O morphology codes
+- Include quantitative measurements with appropriate units (micrometers, millimeters)
+- Reference established classification systems (WHO, AJCC, CAP)
+- Maintain consistency in abbreviations and acronyms throughout
+
+### Standardized Medical Terminology
+- **Morphological identification characteristics**: Specific cellular and architectural features used for diagnosis
+- **Visual and architectural features**: Microscopic appearance and tissue organization patterns
+- **Histopathological analysis**: Comprehensive tissue examination and interpretation
+- **Diagnostic criteria**: Established parameters for definitive diagnosis
+- **Prognostic factors**: Morphological features correlating with clinical outcomes
+
+### Measurement and Quantification Standards
+- **Linear measurements**: Micrometers (μm) for cellular features, millimeters (mm) for tissue measurements
+- **Area measurements**: Square micrometers (μm²) or square millimeters (mm²)
+- **Counting standards**: Per high-power field (HPF) at 400x magnification
+- **Percentage assessments**: Relative proportions of different components
+- **Density measurements**: Cells per unit area or microvessel density per mm²
+
+## Quality Control and Validation
+
+### Content Validation Requirements
+- **Medical accuracy**: Verification against current pathology literature and guidelines
+- **Diagnostic precision**: Correlation with established diagnostic criteria
+- **Completeness assessment**: Comprehensive coverage of all relevant morphological features
+- **Consistency verification**: Uniform terminology and approach throughout
+- **Evidence-based content**: Support from peer-reviewed literature and clinical studies
+
+### Common Quality Issues to Avoid
+
+#### Content-Related Problems
+- Over-generalization without specific morphological details
+- Inconsistent or non-standardized terminology usage
+- Missing critical diagnostic features or differential diagnosis elements
+- Inadequate quantitative assessments or measurements
+- Insufficient correlation with clinical significance
+
+#### Language and Formatting Issues
+- Use of non-standard abbreviations or acronyms
+- Inconsistent formatting and structural organization
+- Grammatical errors or unclear sentence construction
+- Ambiguous or subjective descriptive language
+- Inadequate referencing to established guidelines
+
+### Professional Review and Validation Process
+
+#### Multi-Stage Review Protocol
+1. **Initial content review**: Medical accuracy and completeness assessment
+2. **Terminology validation**: Consistency with standard pathology nomenclature
+3. **Formatting review**: Adherence to documentation standards
+4. **Expert validation**: Subject matter expert review and approval
+5. **Final quality assurance**: Comprehensive compliance verification
+
+#### Validation Criteria
+- **Diagnostic accuracy**: Correlation with established pathology references
+- **Clinical relevance**: Appropriate correlation with patient outcomes
+- **Educational value**: Suitability for medical education and training
+- **Professional standards**: Compliance with pathology society guidelines
+- **Reproducibility**: Consistency across different reviewers and institutions
+
+## International Guidelines Integration
+
+### WHO Classification Compliance
+- Adherence to current WHO Classification of Tumours guidelines
+- Integration of latest morphological criteria and diagnostic standards
+- Inclusion of relevant ICD-O morphology and behavior codes
+- Reference to WHO grading systems where applicable
+
+### CAP Protocol Integration
+- Compliance with College of American Pathologists reporting protocols
+- Integration of required and recommended reporting elements
+- Adherence to CAP terminology and measurement standards
+- Reference to CAP-approved synoptic reporting templates
+
+### Additional International Standards
+- **AJCC Staging Manual**: Integration of pathological staging criteria
+- **ISUP Guidelines**: Urological pathology standards and classifications
+- **IARC References**: International cancer research and classification standards
+- **National Guidelines**: Integration of relevant national pathology society recommendations 
