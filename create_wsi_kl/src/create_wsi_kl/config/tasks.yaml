@@ -103,7 +103,8 @@ finalization_task:
     - Structured data export: construct a valid JSON object with exactly the required number of cancer type keys based on the cancer type specified:
       * For TCGA renal: exactly 3 cancer types (ccRCC, pRCC, chRCC)
       * For TCGA lung: exactly 2 cancer types (LUAD, LUSC)
-      Each key maps to an array of concise morphological feature statements (as many distinct statements as possible), following the prefix format (e.g., "LUAD  statement") and UTF-8 JSON standards
+      * For Camelyon 16: exactly 2 cancer types (Normal lymph node tissue, Metastatic breast cancer)
+      Each key maps to an array of concise morphological feature statements (as many distinct statements as possible), following the prefix format (e.g., "NORM  statement", "META  statement") and UTF-8 JSON standards
   expected_output: >
     Two outputs:
     1. A professionally formatted, publication-ready markdown document (.md) containing:
@@ -121,7 +122,8 @@ finalization_task:
        - Ready for deployment in medical education, clinical reference, or publication contexts
     2. A valid JSON object where:
        - For TCGA renal: exactly 3 keys (ccRCC, pRCC, chRCC) with full cancer type names and abbreviations in parentheses
-       - For TCGA lung: exactly 2 keys (LUAD, LUSC) with full cancer type names and abbreviations in parentheses  
+       - For TCGA lung: exactly 2 keys (LUAD, LUSC) with full cancer type names and abbreviations in parentheses
+       - For Camelyon 16: exactly 2 keys (NORM, META) with full tissue type names and abbreviations in parentheses
        - Each value is an array (no upper bound) of strings, each beginning with the abbreviation followed by two spaces and a concise morphological feature statement
        - The JSON is syntactically valid (UTF-8, double-quoted keys/values, no comments) and ready for storage or direct consumption by downstream applications
   agent: finalizer_agent
