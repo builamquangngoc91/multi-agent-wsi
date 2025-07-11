@@ -18,6 +18,10 @@ class CreateWsiKl:
 
     agents: List[BaseAgent]
     tasks: List[Task]
+    
+    def __init__(self, pdf_file: str):
+        self.pdf_file = pdf_file
+        super().__init__()
 
     # Learn more about YAML configuration files here:
     # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -96,7 +100,7 @@ class CreateWsiKl:
 
         # List of knowledge files to load (add new filenames here as needed)
         knowledge_files = [
-            "tcga_renal.pdf",
+            self.pdf_file,
         ]
 
         for fname in knowledge_files:
