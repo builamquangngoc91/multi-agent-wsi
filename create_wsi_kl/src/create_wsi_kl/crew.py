@@ -96,7 +96,7 @@ class CreateWsiKl:
 
         # List of knowledge files to load (add new filenames here as needed)
         knowledge_files = [
-            "Pathoma 2021 - Kidney.pdf",
+            "tcga_renal.pdf",
         ]
 
         for fname in knowledge_files:
