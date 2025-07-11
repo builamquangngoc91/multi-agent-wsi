@@ -19,8 +19,13 @@ class CreateWsiKl:
     agents: List[BaseAgent]
     tasks: List[Task]
     
-    def __init__(self, pdf_file: str):
-        self.pdf_file = pdf_file
+    def __init__(self, input_file: str, flow_type: str = "generation"):
+        self.input_file = input_file
+        self.flow_type = flow_type
+        if flow_type == "generation":
+            self.pdf_file = input_file
+        else:
+            self.pdf_file = None  # No PDF needed for validation flow
         super().__init__()
 
     # Learn more about YAML configuration files here:
@@ -98,18 +103,18 @@ class CreateWsiKl:
         # Absolute path for existence check
         _abs_knowledge_dir = Path(__file__).resolve().parents[2] / "knowledge"
 
-        # List of knowledge files to load (add new filenames here as needed)
-        knowledge_files = [
-            self.pdf_file,
-        ]
-
-        for fname in knowledge_files:
-            abs_path = _abs_knowledge_dir / fname  # absolute path for validation
-            rel_path = (
-                fname  # path relative to knowledge dir handled internally by CrewAI
-            )
-            if abs_path.exists():
-                knowledge_sources.append(CrewDoclingSource(file_paths=[str(rel_path)]))
+        # Load knowledge files based on flow type
+        if self.flow_type == "generation" and self.pdf_file:
+            knowledge_files = [self.pdf_file]
+            
+            for fname in knowledge_files:
+                abs_path = _abs_knowledge_dir / fname  # absolute path for validation
+                rel_path = (
+                    fname  # path relative to knowledge dir handled internally by CrewAI
+                )
+                if abs_path.exists():
+                    knowledge_sources.append(CrewDoclingSource(file_paths=[str(rel_path)]))
+        # For validation flow, we don't need PDF knowledge sources as descriptions are provided directly
 
         return Crew(
             agents=self.agents,  # Automatically created by the @agent decorator

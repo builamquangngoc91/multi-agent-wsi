@@ -18,28 +18,44 @@ def run():
     """
     Run the WSI Cancer Description Multi-Agent System.
     """
-    # Require cancer_type and pdf_file arguments
+    # Require cancer_type and input_file arguments
     if len(sys.argv) < 3:
-        print("Usage: python main.py <cancer_type> <pdf_file>")
+        print("Usage: python main.py <cancer_type> <input_file>")
+        print("input_file: PDF file for generation flow OR descriptions file for validation flow")
         sys.exit(1)
 
     cancer_type = sys.argv[1]
-    pdf_file = sys.argv[2]
+    input_file = sys.argv[2]
+    
+    # Determine flow type based on file extension
+    if input_file.lower().endswith('.pdf'):
+        flow_type = "generation"
+        pdf_file = input_file
+        descriptions_file = None
+    else:
+        flow_type = "validation"
+        pdf_file = None
+        descriptions_file = input_file
 
     inputs = {
         "cancer_type": cancer_type,
+        "flow_type": flow_type,
         "pdf_file": pdf_file,
+        "descriptions_file": descriptions_file,
         "current_year": str(datetime.now().year),
         "analysis_date": datetime.now().strftime("%Y-%m-%d"),
     }
 
-    print(f"Starting WSI Cancer Description Analysis for: {cancer_type}")
-    print(f"Using PDF file: {pdf_file}")
+    print(f"Starting WSI Cancer Description {flow_type.title()} for: {cancer_type}")
+    if flow_type == "generation":
+        print(f"Using PDF file: {pdf_file}")
+    else:
+        print(f"Using descriptions file: {descriptions_file}")
     print(f"Analysis Date: {inputs['analysis_date']}")
     print("-" * 50)
 
     try:
-        result = CreateWsiKl(pdf_file=pdf_file).crew().kickoff(inputs=inputs)
+        result = CreateWsiKl(input_file=input_file, flow_type=flow_type).crew().kickoff(inputs=inputs)
         print(f"\nWSI Cancer Description completed successfully!")
         print(f"Output saved to: wsi_cancer_description.md")
         return result
