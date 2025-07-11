@@ -89,7 +89,7 @@ description_evaluation_task:
 finalization_task:
   description: >
     Transform the validated cancer description into a professional, publication-ready medical document that meets the highest 
-    standards of medical documentation and scientific publishing. Execute comprehensive formatting and organization tasks including:
+    standards of medical documentation and scientific publishing, AND produce a structured JSON representation of the key morphological features for each cancer type. Execute comprehensive formatting, organization, and data-export tasks including:
     - Professional document structure: implement standardized medical document hierarchy and organization
     - Consistent markdown formatting: apply proper syntax, headers, subheaders, and formatting elements
     - Medical documentation standards: ensure compliance with clinical documentation and pathology reporting guidelines
@@ -100,18 +100,24 @@ finalization_task:
     - Accessibility optimization: structure document for easy navigation and reference
     - Professional presentation: create a polished, professional appearance suitable for medical environments
     - Version control: implement proper document versioning and change tracking
+    - Structured data export: construct a valid JSON object where each cancer type key maps to an array of concise morphological feature statements (as many distinct statements as possible), following the prefix format (e.g., "ccRCC  statement") and UTF-8 JSON standards
   expected_output: >
-    A professionally formatted, publication-ready markdown document (.md) containing:
-    - Properly structured headers and hierarchical organization with clear navigation
-    - Consistent, professional formatting throughout with appropriate use of markdown elements
-    - Complete document metadata including title, authors, creation date, version, and purpose
-    - Professional medical document structure suitable for clinical and educational use
-    - All content validated, finalized, and ready for integration into medical systems
-    - Proper formatting of tables, lists, and structured content where applicable
-    - Clear section demarcation and logical flow for easy reference and navigation
-    - Professional typography and spacing appropriate for medical documentation
-    - Citation placeholders and reference formatting where applicable
-    - Quality assurance summary confirming final document meets all specified standards
-    - Version control information and change log summary
-    - Ready for deployment in medical education, clinical reference, or publication contexts
+    Two outputs:
+    1. A professionally formatted, publication-ready markdown document (.md) containing:
+       - Properly structured headers and hierarchical organization with clear navigation
+       - Consistent, professional formatting throughout with appropriate use of markdown elements
+       - Complete document metadata including title, authors, creation date, version, and purpose
+       - Professional medical document structure suitable for clinical and educational use
+       - All content validated, finalized, and ready for integration into medical systems
+       - Proper formatting of tables, lists, and structured content where applicable
+       - Clear section demarcation and logical flow for easy reference and navigation
+       - Professional typography and spacing appropriate for medical documentation
+       - Citation placeholders and reference formatting where applicable
+       - Quality assurance summary confirming final document meets all specified standards
+       - Version control information and change log summary
+       - Ready for deployment in medical education, clinical reference, or publication contexts
+    2. A valid JSON object where:
+       - Each key is the full cancer type name with abbreviation in parentheses
+       - Each value is an array (no upper bound) of strings, each beginning with the abbreviation followed by two spaces and a concise morphological feature statement
+       - The JSON is syntactically valid (UTF-8, double-quoted keys/values, no comments) and ready for storage or direct consumption by downstream applications
   agent: finalizer_agent

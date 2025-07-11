@@ -91,29 +91,21 @@ class CreateWsiKl:
         # Initialize WSI Cancer knowledge sources
         knowledge_sources = []
 
-        # Add PDF knowledge source if available
-        pdf_files = [
-            "sodapdf-converted.pdf",
-            "wsi_cancer_knowledge.pdf",
-            "pathology_reference.pdf",
+        # Absolute path for existence check
+        _abs_knowledge_dir = Path(__file__).resolve().parents[2] / "knowledge"
+
+        # List of knowledge files to load (add new filenames here as needed)
+        knowledge_files = [
+            "Pathoma 2021 - Kidney.pdf",
         ]
 
-        for pdf_file in pdf_files:
-            pdf_path = Path("knowledge") / pdf_file
-            if pdf_path.exists():
-                knowledge_sources.append(CrewDoclingSource(file_paths=[str(pdf_path)]))
-
-        # Add text knowledge sources
-        text_files = [
-            "user_preference.txt",
-            "wsi_cancer_data.txt",
-            "pathology_guidelines.txt",
-        ]
-
-        for text_file in text_files:
-            text_path = Path("knowledge") / text_file
-            if text_path.exists():
-                knowledge_sources.append(CrewDoclingSource(file_paths=[str(text_path)]))
+        for fname in knowledge_files:
+            abs_path = _abs_knowledge_dir / fname  # absolute path for validation
+            rel_path = (
+                fname  # path relative to knowledge dir handled internally by CrewAI
+            )
+            if abs_path.exists():
+                knowledge_sources.append(CrewDoclingSource(file_paths=[str(rel_path)]))
 
         return Crew(
             agents=self.agents,  # Automatically created by the @agent decorator
