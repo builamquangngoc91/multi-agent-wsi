@@ -19,7 +19,7 @@ def run():
     Run the WSI Cancer Description Multi-Agent System.
     """
     # Default cancer type for testing - can be overridden via command line
-    cancer_type = "lung cancer"
+    cancer_type = "Clear Cell Renal Cell Carcinoma (ccRCC)"
 
     # Check if cancer type is provided via command line
     if len(sys.argv) > 1:
@@ -56,7 +56,7 @@ def train():
         )
         sys.exit(1)
 
-    cancer_type = "lung cancer"
+    cancer_type = "Clear Cell Renal Cell Carcinoma (ccRCC)"
     if len(sys.argv) > 3:
         cancer_type = sys.argv[3]
 
@@ -102,7 +102,7 @@ def test():
         print("Usage: python main.py test <n_iterations> <eval_llm> [cancer_type]")
         sys.exit(1)
 
-    cancer_type = "lung cancer"
+    cancer_type = "Clear Cell Renal Cell Carcinoma (ccRCC)"
     if len(sys.argv) > 3:
         cancer_type = sys.argv[3]
 

@@ -88,36 +88,27 @@ description_evaluation_task:
 
 finalization_task:
   description: >
-    Transform the validated cancer description into a professional, publication-ready medical document that meets the highest 
-    standards of medical documentation and scientific publishing, AND produce a structured JSON representation of the key morphological features for each cancer type. Execute comprehensive formatting, organization, and data-export tasks including:
-    - Professional document structure: implement standardized medical document hierarchy and organization
-    - Consistent markdown formatting: apply proper syntax, headers, subheaders, and formatting elements
-    - Medical documentation standards: ensure compliance with clinical documentation and pathology reporting guidelines
-    - Reference integration: add appropriate citations and reference formatting where needed
-    - Document metadata: include comprehensive document information, creation details, and version control
-    - Quality assurance formatting: implement final formatting checks and consistency verification
-    - Publishing preparation: ensure document meets standards for medical education, clinical reference, and publication
-    - Accessibility optimization: structure document for easy navigation and reference
-    - Professional presentation: create a polished, professional appearance suitable for medical environments
-    - Version control: implement proper document versioning and change tracking
-    - Structured data export: construct a valid JSON object where each cancer type key maps to an array of concise morphological feature statements (as many distinct statements as possible), following the prefix format (e.g., "ccRCC  statement") and UTF-8 JSON standards
+    Produce a concise dictionary-of-list JSON summary for the validated {cancer_type} description.
+    Requirements:
+    - Focus exclusively on ONE cancer type – {cancer_type} – and summarise findings for each individual whole-slide image (WSI) supplied as input.
+    - The output must be a single-level JSON object.
+    - Each key is the identifier (e.g., filename or UID) of an input WSI.
+    - Each value is an array (5–15 items) of short, clinically relevant sentences that cover macroscopic appearance, microscopic morphology, key molecular/pathogenetic events, and typical clinical presentation for that WSI.
+    - Sentences MUST:
+        • Start with a capital letter and end with a period.
+        • Be plain text (no markdown, list markers, or nested objects).
+        • Avoid redundancy and be ≤ 25 words each.
+    - Order sentences logically (macroscopic → microscopic → molecular → clinical).
+    - Ensure strictly valid JSON: UTF-8, double-quoted keys/strings, no trailing commas, no comments.
   expected_output: >
-    Two outputs:
-    1. A professionally formatted, publication-ready markdown document (.md) containing:
-       - Properly structured headers and hierarchical organization with clear navigation
-       - Consistent, professional formatting throughout with appropriate use of markdown elements
-       - Complete document metadata including title, authors, creation date, version, and purpose
-       - Professional medical document structure suitable for clinical and educational use
-       - All content validated, finalized, and ready for integration into medical systems
-       - Proper formatting of tables, lists, and structured content where applicable
-       - Clear section demarcation and logical flow for easy reference and navigation
-       - Professional typography and spacing appropriate for medical documentation
-       - Citation placeholders and reference formatting where applicable
-       - Quality assurance summary confirming final document meets all specified standards
-       - Version control information and change log summary
-       - Ready for deployment in medical education, clinical reference, or publication contexts
-    2. A valid JSON object where:
-       - Each key is the full cancer type name with abbreviation in parentheses
-       - Each value is an array (no upper bound) of strings, each beginning with the abbreviation followed by two spaces and a concise morphological feature statement
-       - The JSON is syntactically valid (UTF-8, double-quoted keys/values, no comments) and ready for storage or direct consumption by downstream applications
+    A valid JSON object in the requested dictionary-of-list format, for example:
+    {
+      "case123.svs": [
+        "The tumour appears as a yellow-tan mass on gross examination.",
+        "Microscopically, tumour cells display clear cytoplasm with delicate vasculature.",
+        "Loss of the VHL gene constitutes the key pathogenetic event in this neoplasm.",
+        "Stabilisation of HIF subsequently up-regulates VEGF and PDGF signalling pathways.",
+        "Patients often present with hematuria, flank pain, and occasionally a palpable mass."
+      ]
+    }
   agent: finalizer_agent
