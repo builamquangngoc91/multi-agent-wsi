@@ -90,10 +90,10 @@ finalization_task:
   description: >
     Produce a concise dictionary-of-list JSON summary for the validated {cancer_type} description.
     Requirements:
-    - Focus exclusively on ONE cancer type – {cancer_type} – and summarise findings for each individual whole-slide image (WSI) supplied as input.
-    - The output must be a single-level JSON object.
-    - Each key is the identifier (e.g., filename or UID) of an input WSI.
-    - Each value is an array (5–15 items) of short, clinically relevant sentences that cover macroscopic appearance, microscopic morphology, key molecular/pathogenetic events, and typical clinical presentation for that WSI.
+    - Focus exclusively on ONE cancer type – {cancer_type}.
+    - The output must be a single-level JSON object with EXACTLY ONE KEY that equals the cancer_type.
+    - The key must be the exact cancer_type string provided as input.
+    - The value is an array (5–15 items) of short, clinically relevant sentences that cover macroscopic appearance, microscopic morphology, key molecular/pathogenetic events, and typical clinical presentation for this cancer type.
     - Sentences MUST:
         • Start with a capital letter and end with a period.
         • Be plain text (no markdown, list markers, or nested objects).
@@ -101,9 +101,9 @@ finalization_task:
     - Order sentences logically (macroscopic → microscopic → molecular → clinical).
     - Ensure strictly valid JSON: UTF-8, double-quoted keys/strings, no trailing commas, no comments.
   expected_output: >
-    A valid JSON object in the requested dictionary-of-list format, for example:
+    A valid JSON object with exactly one key that equals the cancer_type, for example:
     {
-      "case123.svs": [
+      "Clear Cell Renal Cell Carcinoma (ccRCC)": [
         "The tumour appears as a yellow-tan mass on gross examination.",
         "Microscopically, tumour cells display clear cytoplasm with delicate vasculature.",
         "Loss of the VHL gene constitutes the key pathogenetic event in this neoplasm.",

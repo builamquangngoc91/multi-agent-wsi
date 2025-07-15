@@ -108,6 +108,18 @@ Test system performance:
 python -m create_wsi_kl.main test <n_iterations> <eval_llm> [cancer_type]
 ```
 
+#### Scenario 2: Validate from JSON
+
+Use existing cancer descriptions from JSON file as knowledge source:
+
+```bash
+# Use JSON file as knowledge source
+python -m create_wsi_kl.main "Cancer Type" --json-source knowledge/cancer_descriptions.json
+
+# Example
+python -m create_wsi_kl.main "Lung Adenocarcinoma (LUAD)" --json-source knowledge/cancer_descriptions.json
+```
+
 #### Replay Mode
 
 Replay execution from a specific task:
@@ -279,3 +291,31 @@ The system adheres to:
 ---
 
 _Building the future of AI-assisted medical documentation with the power and precision of specialized multi-agent systems._
+
+**TCGA-Lung Cancer Types**
+
+The TCGA-Lung project includes the following major cancer types:
+
+- **Lung Adenocarcinoma (LUAD)**
+- **Lung Squamous Cell Carcinoma (LUSC)**
+
+**TCGA-Renal Cancer Types**
+
+The TCGA-Renal project includes the following major cancer types:
+
+- **Kidney Renal Clear Cell Carcinoma (KIRC)**
+- **Kidney Renal Papillary Cell Carcinoma (KIRP)**
+- **Kidney Chromophobe (KICH)**
+
+**CAMELYON16 Cancer Types**
+
+The CAMELYON16 project is a benchmark dataset for the detection of lymph node metastases in breast cancer using whole slide images. It focuses on the following cancer-related categories:
+
+- **Breast Cancer Lymph Node Metastasis (Primary focus)**
+  - Macro-metastases (large metastatic deposits)
+  - Micro-metastases (small metastatic deposits)
+- **No Tumor (Negative Lymph Nodes)**
+  - Lymph node slides without evidence of metastatic tumor, serving as negative controls
+
+For more information, visit the [CAMELYON16 website](https://camelyon16.grand-challenge.org/).
+
